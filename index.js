@@ -12,7 +12,8 @@ MongoClient.connect('mongodb://localhost/library', (err, db) => {
   }
   const carousel = db.collection('carousel')
 
-  app.get('/', (req, res) => {
+  app.get('/slides', (req, res) => {
+    console.log('hi')
     carousel
       .find({})
       .toArray()
@@ -24,5 +25,5 @@ MongoClient.connect('mongodb://localhost/library', (err, db) => {
         res.sendStatus(500)
       })
   })
-  app.listen(3000, () => console.log('Test at http://localhost:3000'))
+  app.listen(3000, () => console.log('Test at http://localhost:4000'))
 })
