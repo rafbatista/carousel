@@ -13,17 +13,17 @@ MongoClient.connect('mongodb://localhost/library', (err, db) => {
       carousel.insertMany([
         {
           id: 1,
-          imgSrc: '/public/images/audi-a5-2018.jpg',
+          imgSrc: 'public/images/audi-a5-2018.jpg',
           altImgName: '2018 Audi A5'
         },
         {
           id: 2,
-          imgSrc: '/public/images/bmw-430i-2018.jpg',
+          imgSrc: 'public/images/bmw-430i-2018.jpg',
           altImgName: '2018 BMW 430i'
         },
         {
           id: 3,
-          imgSrc: '/public/images/cadillac-ats-coupe-2018.png',
+          imgSrc: 'public/images/cadillac-ats-coupe-2018.png',
           altImgName: '2018 Cadillac ATS Coupe'
         }
       ])
