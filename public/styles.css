@@ -1,0 +1,52 @@
+.slides {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.slide {
+  width: 50vw;
+  height: 60vh;
+}
+
+.button-left {
+  position: absolute;
+  top: 50%;
+  left: -9%;
+  font-size: 1.5rem;
+}
+
+ul {
+  position: absolute;
+  top: 85%;
+  left: 50%;
+  transform: rotate(-90deg);
+  list-style: none;
+}
+
+li {
+  margin-bottom: 3rem;
+}
+
+.button-right {
+  position: absolute;
+  top: 50%;
+  right: -9%;
+  font-size: 1.5rem;
+}
+
+.progress {
+  position: absolute;
+  color: #ccc;
+  transform: rotate(90deg);
+  top: 95%;
+  left: 51%;
+}
+
+.progress li {
+  margin: 0.3rem;
+  font-size: 1rem;
+  display: inline;
+  list-style: none;
+}
