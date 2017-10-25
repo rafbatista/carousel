@@ -13,7 +13,6 @@ MongoClient.connect('mongodb://localhost/library', (err, db) => {
   const carousel = db.collection('carousel')
 
   app.get('/slides', (req, res) => {
-    console.log('hi')
     carousel
       .find({})
       .toArray()
