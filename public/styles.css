@@ -35,3 +35,18 @@ li {
   right: -9%;
   font-size: 1.5rem;
 }
+
+.progress {
+  position: absolute;
+  color: #ccc;
+  transform: rotate(90deg);
+  top: 95%;
+  left: 51%;
+}
+
+.progress li {
+  margin: 0.3rem;
+  font-size: 1rem;
+  display: inline;
+  list-style: none;
+}

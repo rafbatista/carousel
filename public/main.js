@@ -12,9 +12,10 @@ slides()
   .then((images) => {
     carousel.slides = images
   })
-  .then(() => changeSlide())
+  .then(() => drawSlide())
+  .then(() => updateProgress())
 
-const changeSlide = () => {
+const drawSlide = () => {
   document
     .querySelector('.slide')
     .setAttribute('src', `${carousel.slides[carousel.current].imgSrc}`)
@@ -27,20 +28,47 @@ setInterval(() => {
   else {
     carousel.current = 0
   }
-  changeSlide()
+  drawSlide()
+  updateProgress()
 }, 3000)
 
 const $prevButton = document.querySelector('.fa-arrow-left')
-
 $prevButton.addEventListener('click', () => {
   if (carousel.current === 0) return
   carousel.current--
-  changeSlide()
+  drawSlide()
+  updateProgress()
 })
 
 const $nextButton = document.querySelector('.fa-arrow-right')
 $nextButton.addEventListener('click', () => {
-  if (carousel.current === 2) return
+  if (carousel.current === carousel.slides.length - 1) return
   carousel.current++
-  changeSlide()
+  drawSlide()
+  updateProgress()
 })
+
+const progress = () => {
+  const $steps = carousel.slides.map((slide, index) => {
+    const $step = document.createElement('li')
+
+    if (index === carousel.current) {
+      $step.className = 'fa fa-circle'
+    }
+    else {
+      $step.className = 'fa fa-circle-o'
+    }
+    return $step
+  })
+
+  return $steps.reduce((parent, child) => {
+    parent.appendChild(child)
+    return parent
+  }, document.createElement('ul'))
+}
+
+const updateProgress = () => {
+  const $progress = document.querySelector('.progress')
+  $progress.innerHTML = ''
+  $progress.appendChild(progress())
+}
